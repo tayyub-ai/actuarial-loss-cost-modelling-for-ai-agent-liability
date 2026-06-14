@@ -1,0 +1,11 @@
+.claude/settings.local.json
+.DS_Store
+_local/
+data/raw/
+*.aux
+*.log
+*.out
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+docs/
