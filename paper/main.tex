@@ -1,6 +1,6 @@
 % Emerging Liability Severity Under Sparse Claims
 % Self-contained LaTeX (no external .bib): compiles on Overleaf or with tectonic.
-% Realistic target venue: Variance (CAS) or Risks (MDPI) — an APPLIED synthesis,
+% Realistic target venue: Variance (CAS) or Risks (MDPI); an applied synthesis,
 % not a theorem paper (the methods are recombinations of known results).
 % Revised to remove overclaims and unsupported empirical assertions flagged by a
 % four-persona review panel (actuary, AI architect, liability lawyer, editor).
@@ -24,7 +24,7 @@
 Disclosure Censoring and the Identifiability Frontier\\
 with an Illustrative Application to AI Systems}}
 \author{Tayyub Yaqoob\\\small Independent Researcher}
-\date{Working draft --- \today}
+\date{Working draft, \today}
 
 \begin{document}
 \maketitle
@@ -43,22 +43,20 @@ emerging-risk analysis is necessarily severity-first. (ii)~We define an \emph{id
 frontier} $n^\star$ at which the posterior escapes the prior, recover the classical
 B\"uhlmann--Straub factor as its conjugate special case, and show that left-truncation deflates
 the effective sample size by a factor $1-\delta(\alpha)$, inflating $n^\star$ by
-$1/(1-\delta(\alpha))$ (Lemma~1, Corollary~1; numerically validated). (iii)~We illustrate the
-lens on a public-record screen of AI-attributed losses. Our empirical contribution is
-deliberately modest: we report a screening funnel and an \emph{illustrative} convenience set,
-and show that the prior-driven-versus-data-driven verdict is \emph{not identified} from
-currently available public data---it flips across plausible prior strengths---which is itself
-the cautionary message for pricing emerging risks. The methodological components are
-recombinations of known results (credibility, truncated-normal information, the lognormal
-limited expected value); the contribution is the identifiability \emph{lens} and its honest
-empirical localisation, not a new theorem.
+$1/(1-\delta(\alpha))$ (Lemma~1, Corollary~1). (iii)~We apply the framework to a public-record
+screen of AI-attributed losses. The empirical result is negative: a screening funnel and an
+illustrative case set show that the prior-driven versus data-driven verdict is \emph{not
+identified} from currently available public data, because it flips across plausible prior
+strengths. The methodological components are recombinations of known results (credibility theory,
+the truncated-normal information, the lognormal limited expected value); the contribution is the
+framing and the empirical localisation, not a new theorem.
 
 \medskip\noindent\textbf{Keywords:} credibility theory; commensurate priors; left-truncation;
 effective sample size; emerging risk; AI liability.
 \end{abstract}
 
 \section{Introduction}
-Actuaries repeatedly price novel risks before a mature claims ledger exists---commercial
+Actuaries repeatedly price novel risks before a mature claims ledger exists, commercial
 aviation, catastrophe aggregation, cyber, and now artificial-intelligence (AI) systems. A
 standalone market for affirmative AI-liability cover has emerged (Lloyd's coverholders, Munich
 Re's aiSure, and specialist managing general agents), priced today on bespoke, proprietary
@@ -77,13 +75,13 @@ In the absence of own-line data the instrument is \emph{credibility}: borrow fro
 mature proxy and let data correct the prior. The question we make precise is not ``what is the
 expected loss'' but ``how much of any answer is data and how much is the borrowed prior.''
 
-\paragraph{Contributions and honest scope.}
+\paragraph{Contributions and scope.}
 \begin{enumerate}
 \item \textbf{Frequency non-identifiability} from public catalogues, motivating a severity-first analysis.
 \item \textbf{An identifiability frontier} $n^\star(t)$ deflated by disclosure-censoring
 (Lemma~1, Corollary~1), with a worked layer-pricing implication (Proposition~1). The underlying
-pieces---B\"uhlmann--Straub credibility, the truncated-normal Fisher information, the lognormal
-limited expected value---are standard; the synthesis is the contribution.
+pieces, B\"uhlmann--Straub credibility, the truncated-normal Fisher information, the lognormal
+limited expected value, are standard; the synthesis is the contribution.
 \item \textbf{An illustrative empirical localisation} on a public-record AI screen, reported
 with its limitations, showing the regime verdict is \emph{not identified} from current data.
 \end{enumerate}
@@ -98,15 +96,15 @@ to data-pricing.
 
 \paragraph{AI insurance (qualitative/architectural).} Four 2026 contributions treat AI insurance
 without calibrating a severity distribution from loss data: \citet{zhu2026} (a conceptual
-framework), \citet{leung2026insurability} (a coverage taxonomy---the \emph{insurability}
-frontier), \citet{chen2026} (runtime control---an \emph{authority} frontier), and
+framework), \citet{leung2026insurability} (a coverage taxonomy, the \emph{insurability}
+frontier), \citet{chen2026} (runtime control, an \emph{authority} frontier), and
 \citet{leung2026cer} (a loss-reconstruction diagnostic). Our \emph{identifiability} frontier is
 distinct from these.
 
 \paragraph{Credibility, borrowing, truncation.} Exact credibility is due to \citet{jewell1974};
 \citet{diaconis1979} characterise conjugacy by posterior-mean linearity; \citet{buhlmann2005} is
-standard. Dynamic borrowing---commensurate \citep{hobbs2011}, power \citep{ibrahim2000,han2022},
-robust-MAP \citep{schmidli2014}---repeatedly finds the borrowing strength weakly identified at
+standard. Dynamic borrowing, commensurate \citep{hobbs2011}, power \citep{ibrahim2000,han2022},
+robust-MAP \citep{schmidli2014}, repeatedly finds the borrowing strength weakly identified at
 small $n$. Left-truncated and trimmed loss models are standard
 \citep{klugman2019,kimjeon2013}.
 
@@ -114,7 +112,7 @@ small $n$. Left-truncated and trimmed loss models are standard
 \paragraph{Severity scale.} Let $Y=\log X$, $Y\sim\mathcal{N}(\theta,\sigma^2)$ with $\sigma$ the
 within-line dispersion, and a commensurate proxy prior $\theta\sim\mathcal{N}(m_0,\tau^2)$.
 We model the \emph{location} $\theta$; the dispersion $\sigma$ (the tail) is held at the proxy
-value---a restriction we return to as a central limitation.
+value, a restriction we return to as a central limitation.
 
 \paragraph{Inclusion boundary.} We target third-party \emph{economic-loss} liability from an AI
 system in a professional/commercial-service role (advice, information, content, customer
@@ -253,42 +251,42 @@ an approximation). The \$100k floor is a disclosure threshold, motivating Sectio
 
 \section{Illustrative empirical localisation}\label{sec:empirical}
 \paragraph{Screen.} We re-screen \emph{all} $1{,}505$ AIID incidents (CC-BY-SA~4.0) against the
-Section~\ref{sec:model} inclusion boundary---not only those matching a monetary regex, which
+Section~\ref{sec:model} inclusion boundary, not only those matching a monetary regex, which
 miss small or foreign-currency figures (e.g.\ the canonical \emph{Moffatt v.\ Air Canada}
 chatbot case). Out-of-boundary classes (wrongful-arrest, biometric/BIPA, physical-safety,
 employment, government-benefit) are excluded with documented per-case reasons; the screen is
 released as auditable code and CSV.
 
-\paragraph{The in-boundary count is small and heterogeneous, and that is the finding.} The
-re-screen returns $181$ in-boundary candidates. Categorising them is decisive: $75$ are
+\paragraph{Composition of the in-boundary set.} The
+re-screen returns $181$ in-boundary candidates. Their composition: $75$ are
 copyright/IP matters carrying \emph{unpaid} demands (multi-billion-dollar prayers for relief in
 training-data suits), $35$ are regulatory fines, $16$ are lawyer-sanction matters (AI-fabricated
 citations), and only $\sim$$28$ are genuine ``AI service $\to$ third-party economic loss''. Of
 those, the cases with a confirmed \emph{paid} figure number only a handful and span four orders
-of magnitude---from the Air Canada chatbot tribunal award ($\approx$CAD\$812) to AI-defamation
-settlements of \$5M (Meta) and \$15M (Google)---and are dominated by defamation rather than the
+of magnitude, from the Air Canada chatbot tribunal award ($\approx$CAD\$812) to AI-defamation
+settlements of \$5M (Meta) and \$15M (Google), and are dominated by defamation rather than the
 advisory/decision-support losses the boundary targets. Pooling the headline figures of distinct
 legal regimes (copyright demands, fines, sanctions, settlements), as a naive screen does, both
-mis-classifies and wildly overstates the severity sample (Figures~\ref{fig:funnel}--\ref{fig:severity}).
+mis-classifies and overstates the severity sample (Figures~\ref{fig:funnel}--\ref{fig:severity}).
 
 \begin{figure}[h]\centering
 \includegraphics[width=0.92\textwidth]{fig_funnel.pdf}
 \caption{Screening funnel (left) and category composition of the $181$ in-boundary candidates
 (right). The overwhelming majority are copyright/IP demands, regulatory fines, or lawyer-sanction
 matters; only $\sim$$28$ are genuine ``AI service $\to$ third-party economic loss'', and fewer
-still carry a paid figure---the sparsity that is the empirical finding.}
+still carry a paid figure.}
 \label{fig:funnel}
 \end{figure}
 
 \begin{figure}[h]\centering
 \includegraphics[width=0.80\textwidth]{fig_severity.pdf}
 \caption{Illustrative in-boundary paid cases on a log-dollar scale (amounts approximate, pending
-primary-source verification). The span of roughly four orders of magnitude---and the dominance of
-defamation---illustrates why a severity distribution cannot be calibrated from this sample.}
+primary-source verification). The span of roughly four orders of magnitude, and the dominance of
+defamation, illustrates why a severity distribution cannot be calibrated from this sample.}
 \label{fig:severity}
 \end{figure}
 
-\paragraph{This is not a verified severity dataset, and we do not treat it as one.} Even the
+\paragraph{Defects of the in-boundary screen.} Even the
 in-boundary screen has material defects, each of which alone undermines a pricing inference:
 (a)~figures are secondary, mixed-currency, nominal across $\sim$2015--2025 and not yet confirmed
 against court/regulator primary sources; (b)~loss types (settlement / award / fine / demand) are
@@ -297,18 +295,17 @@ limits and ability-to-pay (settlements cluster at tower limits, not true harm), 
 $\hat\sigma$, and this is unmodelled; (d)~the disclosure mechanism is selection-on-unobservables
 (large losses settle under NDA \emph{to avoid} disclosure), violating the fixed-threshold
 left-truncation the model assumes; (e)~recent cases are immature (IBNR); (f)~AIID is itself
-curated for notable incidents---a second selection layer away from an underwriter's exposure
+curated for notable incidents, a second selection layer away from an underwriter's exposure
 population.
 
 \paragraph{What can be said.} With only a handful of genuinely in-boundary paid settlements, the
 severity \emph{location} cannot be estimated with any precision, let alone localised on the
 frontier of Table~\ref{tab:val}: any $Z_{\text{eff}}$ computed from such an $n$ is dominated by
-sampling and classification noise far exceeding the $14$-versus-$17$ margins previously claimed,
+sampling and classification noise far exceeding any plausible regime margin,
 and the verdict flips across plausible prior strengths $k$ (which is itself weakly identified).
 \textbf{The prior-driven-versus-data-driven regime is therefore not identified from current
-public data.} That negative result---public AI-liability loss experience is too sparse,
-heterogeneous, and selection-distorted to displace a proxy prior---is the paper's defensible
-empirical message. A severity \emph{calibration} would require non-public insurer claims data;
+public data.} That negative result, public AI-liability loss experience is too sparse,
+heterogeneous, and selection-distorted to displace a proxy prior, is the paper's empirical conclusion. A severity \emph{calibration} would require non-public insurer claims data;
 public catalogues can support a screen and an identifiability statement, not a rate.
 
 \section{Limitations and threats to validity}
@@ -319,7 +316,7 @@ tail-driven, so excess-layer pricing is out of scope (Proposition~\ref{prop:lev}
 correlated/fleet-wide (one model defect $\to$ many simultaneous claims), an accumulation risk
 the i.i.d.\ credibility machinery and the idiosyncratic cyber proxy both ignore.
 (iv)~\textbf{Proxy isomorphism} is assumed, not defended: cyber severity scales with records
-breached, AI economic loss with downstream reliance on wrong outputs---different tail drivers.
+breached, AI economic loss with downstream reliance on wrong outputs, different tail drivers.
 (v)~\textbf{Heavy tails}: the lognormal location model contradicts the heavy/infinite-mean cyber
 tails cited; moment-matching $\sigma$ is unreliable there.
 (vi)~\textbf{Data}: right-censoring, selection-on-unobservables, IBNR immaturity, currency/year
@@ -330,11 +327,10 @@ so claims about autonomous AI \emph{agents} are not supported by this sample.
 is deferred.
 
 \section{Conclusion}
-Framing emerging-risk severity as an identifiability question---and giving an explicit,
-censoring-inflated frontier $n^\star(t)$---is a clean applied lens, and the honest empirical
-finding is a \emph{negative} one: with current public data the prior-/data-driven regime for
+Framing emerging-risk severity as an identifiability question, and giving an explicit,
+censoring-inflated frontier $n^\star(t)$, is the applied contribution, and the empirical finding is a \emph{negative} one: with current public data the prior-/data-driven regime for
 AI-liability severity is not identified. The mathematical components are standard recombinations,
-not new theorems; the contribution is the lens and its candid localisation. Realistic venue is an
+not new theorems; the contribution is the framing and the empirical localisation. Realistic venue is an
 applied actuarial outlet (e.g.\ \emph{Variance} or \emph{Risks}). Future work that would make this
 a substantive contribution: a sourced, in-boundary, censoring- and selection-corrected dataset; an
 accumulation/dependence model for fleet-correlated AI failures; and extension of the credibility
